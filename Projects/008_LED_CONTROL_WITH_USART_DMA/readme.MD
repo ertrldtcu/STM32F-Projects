@@ -1,0 +1,6 @@
+# Led Control With USART DMA
+
+In this project, communication was established over USART using DMA. Unlike my previous project '006_LED_CONTROL_WITH_USART_INTERRUPT,' in this project, DMA was also used for Transmit operations. It was not possible to perform consecutive Transmits with DMA because sending a new request before the previous Transmit operation was completed caused errors. To address this issue, I wrote a custom module that includes Transmit_DMA function. The Transmit_DMA function stores incoming requests in a buffer. When a new request arrives or the previous request is completed, it performs the next Transmit operation if there is one. This way, when consecutive Transmit requests are made, they are temporarily held in the buffer and sent in sequence once the previous transmission is completed. The DMA feature of the STM32F401VET6 microcontroller did not work in Proteus. Therefore, in this project, simulation was conducted on an STM32F103C4 microcontroller.
+
+![](https://github.com/ertrldtcu/STM32F-Projects/blob/master/Projects/008_LED_CONTROL_WITH_USART_DMA/008_LED_CONTROL_WITH_USART_DMA_VT.png)
+![](https://github.com/ertrldtcu/STM32F-Projects/blob/master/Projects/008_LED_CONTROL_WITH_USART_DMA/008_LED_CONTROL_WITH_USART_DMA.jpg)

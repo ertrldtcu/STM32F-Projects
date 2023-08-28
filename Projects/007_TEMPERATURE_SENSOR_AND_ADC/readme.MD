@@ -4,12 +4,12 @@ In this project, an STM32F103C4 microcontroller was used instead of the STM32F40
 
 Data from the LM35 temperature sensor is read using the ADC through the 0th pin of port A. The LM35 sensor measures temperatures in the range of -55°C to 150°C. The Vin pin of the sensor should be supplied with power between 4V and 30V (recommended 6V). The GND pin should be connected to 0V, but when this pin is connected to 0V, negative voltage is applied to the Vout pin at temperatures below zero. The microcontroller we are using cannot read negative voltages via the ADC. Therefore, in order to start the Vout voltage range from 0V, the GND pin is connected to 0.55V. This provides approximately 0V for -55°C.
 
-The LEDs on the right-hand side operate as follows:
-Blue LED (PB0): Turns on if the temperature is 0 or below
-Green LED (PB1): Turns on if the temperature is 10 or above
-Yellow LED (PB0): Turns on if the temperature is 20 or above
-Orange LED (PB2): Turns on if the temperature is 30 or above
-Red LED (PB3): Turns on if the temperature is 40 or above
+The LEDs on the right-hand side operate as follows:<br/>
+Blue LED (PB0): Turns on if the temperature is 0 or below<br/>
+Green LED (PB1): Turns on if the temperature is 10 or above<br/>
+Yellow LED (PB0): Turns on if the temperature is 20 or above<br/>
+Orange LED (PB2): Turns on if the temperature is 30 or above<br/>
+Red LED (PB3): Turns on if the temperature is 40 or above.<br/>
 
 The ADC operates in continuous conversion mode using interrupts.
 
